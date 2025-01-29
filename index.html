@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansi Gupta | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --red: #FF2E2E;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--black);
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 8%;
+            background: var(--black);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+        }
+        .logo{
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        /* Home Section */
+        #home {
+            min-height: 100vh;
+            padding: 8rem 8% 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 6px solid var(--red);
+            
+            object-fit: cover;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--red);
+        }
+
+        .cv-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 6rem 8%;
+            background: var(--dark-gray);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .education-card {
+            background: var(--black);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--red);
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 6rem 8%;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--dark-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 6rem 8%;
+            background: var(--dark-gray);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--black);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .project-image {
+            height: 250px;
+            background: #333;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Experience Section */
+        #experience {
+            padding: 6rem 8%;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: var(--dark-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--red);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 6rem 8%;
+            background: var(--dark-gray);
+        }
+
+        .contact-container {
+            display: grid;
+            
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background: var(--black);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MG</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1 class="name">Mansi Gupta</h1>
+            <p class="title">AI/ML Engineer & Cybersecurity Specialist</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mansi-gupta-831300294/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Mansi-Gupta2006" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/mansi_gupta_2006/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <a href="CV.pdf" download class="cv-button">Download Resume</a>
+        </div>
+        <div class="profile-container">
+            <img src="mansi.jpeg" alt="Mansi Gupta" class="profile-img">
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>BCA (2023-2026)</h3>
+                <p>Modern Girls' College, University of Lucknow</p>
+                
+            </div>
+            <div class="education-card">
+                <h3>10+2 & High School (2019-2023)</h3>
+                <p>Rani Laxmi Bai Memorial School, Lucknow</p>
+                <p>Commerce with Computer Science</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Machine Learning (Python)</h3>
+                <p>TensorFlow, PyTorch, Scikit-learn</p>
+            </div>
+            <div class="skill-card">
+                <h3>Web Designing</h3>
+                <p>HTML5, CSS3, JavaScript, React</p>
+            </div>
+            <div class="skill-card">
+                <h3>Java Programming</h3>
+                <p>Spring Framework, Hibernate</p>
+            </div>
+            <div class="skill-card">
+                <h3>Database Handling</h3>
+                <p>MySQL</p>
+            </div>
+            <div class="skill-card">
+                <h3>Chatbot Designing</h3>
+                <p>Dialogflow, RASA, NLP</p>
+            </div>
+            <div class="skill-card">
+                <h3>Generative AI</h3>
+                <p>GANs, Transformers, Diffusion Models</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <style>
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .project-card {
+        text-decoration: none;
+        color: inherit;
+        background: black;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .project-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .project-content {
+        padding: 15px;
+        text-align: center;
+
+    }
+</style>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-image">
+                <img src="gadfly1.png" alt="Gadfly AI Assistant">
+            </div>
+            <div class="project-content">
+                <h3>Gadfly AI Assistant</h3>
+                <p>Socratic learning chatbot with RAG integration</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-image">
+                <img src="sanketa.png" alt="Gesture Control">
+            </div>
+            <div class="project-content">
+                <h3>Gesture Volume Control</h3>
+                <p>OpenCV & MediaPipe hand gesture recognition</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-image">
+                <img src="tonomusneom.jpg" alt="Smart Prop-Tech">
+            </div>
+            <div class="project-content">
+                <h3>Smart Prop-Tech</h3>
+                <p>Net Zero solution</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <div class="project-image">
+                <img src="nalanda.png" alt="Nalanda Project">
+            </div>
+            <div class="project-content">
+                <h3>Nalanda Open University Project</h3>
+                <p>Java Spring Framework development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>Project Intern @ SmartEdge</h3>
+                <p>July 2024 - Present</p>
+                <ul>
+                    <li>Learn-Innovate-Accelerate Program</li>
+                    <li>Developed AI-driven agricultural solutions</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Sofpro India Internship</h3>
+                <p>Java Spring Framework Development</p>
+                <ul>
+                    <li>Nalanda Open University Project</li>
+                    <li>Full-stack development and deployment</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Microsoft Azure Copilot Seminar</h3>
+                <p>October 2024</p>
+                <ul>
+                    <li>Advanced AI Workshop Attendee</li>
+                    <li>Hands-on cloud AI implementations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Collaborate</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="6" placeholder="Message" required></textarea>
+                <button type="submit" class="cv-button">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> +91 9336585116</p>
+                <p><i class="fas fa-envelope"></i> promansi@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Lucknow, India</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mansi-gupta-831300294/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Mansi-Gupta2006" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/mansi_gupta_2006/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
